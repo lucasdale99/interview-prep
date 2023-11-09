@@ -1,0 +1,28 @@
+import { QuestionAndAnswerDTO } from '../model/QuestionAndAnswerDTO';
+
+export class QuestionAndAnswerDO {
+    private _questionAndAnswerValueObject: QuestionAndAnswerDTO[];
+    private _isAddQuestionPopup: boolean;
+
+    constructor(questionAndAnswerValueObject: QuestionAndAnswerDTO[], isAddQuestionPopup: boolean) {
+        this._questionAndAnswerValueObject = questionAndAnswerValueObject
+        this._isAddQuestionPopup = isAddQuestionPopup
+    }
+
+    public updateIsAddQuestionPopup(isAddQuestion: boolean): QuestionAndAnswerDO {
+        const response = this.clone();
+        response._isAddQuestionPopup = isAddQuestion;
+        return response;
+    }
+
+    public updateListOfQuestionAndAnswers(list: QuestionAndAnswerDTO[]): QuestionAndAnswerDO {
+        const response = this.clone();
+        response._questionAndAnswerValueObject = list;
+        return response;
+    }
+
+
+    private clone(): QuestionAndAnswerDO {
+        return new QuestionAndAnswerDO([], false)
+    }
+}

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\Personal\\Portfolio\\interview-prep\\interview-prep-api\\interview-prep-api.csproj": {}
+    "/Users/lucasdale/repos/interview-prep/interview-prep-api/interview-prep-api.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\Personal\\Portfolio\\interview-prep\\interview-prep-api\\interview-prep-api.csproj": {
+    "/Users/lucasdale/repos/interview-prep/interview-prep-api/interview-prep-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\Personal\\Portfolio\\interview-prep\\interview-prep-api\\interview-prep-api.csproj",
+        "projectUniqueName": "/Users/lucasdale/repos/interview-prep/interview-prep-api/interview-prep-api.csproj",
         "projectName": "interview-prep-api",
-        "projectPath": "C:\\Repos\\Personal\\Portfolio\\interview-prep\\interview-prep-api\\interview-prep-api.csproj",
-        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\Personal\\Portfolio\\interview-prep\\interview-prep-api\\obj\\",
+        "projectPath": "/Users/lucasdale/repos/interview-prep/interview-prep-api/interview-prep-api.csproj",
+        "packagesPath": "/Users/lucasdale/.nuget/packages/",
+        "outputPath": "/Users/lucasdale/repos/interview-prep/interview-prep-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lucasdale/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.403/RuntimeIdentifierGraph.json"
         }
       }
     }

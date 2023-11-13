@@ -1,12 +1,6 @@
 import {APIGateway} from "./APIGateway";
 import { IAPIResponseHandler } from "./IAPIResponseHandler";
 
-jest.mock('react-native', () => ({
-    Platform: {
-        OS: 'web', // Or 'android' or 'ios' depending on your use case
-    },
-}));
-
 describe("API Gateway", () => {
     let apiGateway: APIGateway;
     let fetchMock: jest.Mock;

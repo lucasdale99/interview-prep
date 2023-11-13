@@ -2,6 +2,8 @@ import { QuestionAndAnswerGateway } from "@/app/questionAndAnswerAggregate/gatew
 import { APIGateway } from "../apiGateway/APIGateway";
 import { IServiceContext } from "./IServiceContext";
 import { APIResponseHandler } from "../apiGateway/APIResponseHandler";
+import { QuestionAndAnswerService } from "@/app/questionAndAnswerAggregate/service/QuestionAndAnswerService";
+import { QuestionAndAnswerRepository } from "@/app/questionAndAnswerAggregate/repository/QuestionAndAnswerRepository";
 
 export class ServiceProvider {
     private static instance: ServiceProvider;
@@ -11,10 +13,12 @@ export class ServiceProvider {
         const jsonResponseHandler = new APIResponseHandler();
         const apiGateway = new APIGateway(jsonResponseHandler);
         const questionAndAnswerGateway = new QuestionAndAnswerGateway(apiGateway);
+        const questionAndAnswerRepository = new QuestionAndAnswerRepository(questionAndAnswerGateway);
+        const questionAndAnswerService = new QuestionAndAnswerService(questionAndAnswerRepository);
         
         //We should only inject the services into this to be used within the app
         this._serviceContext = {
-
+            QuestionAndAnswerService: questionAndAnswerService,
         }
     }
     

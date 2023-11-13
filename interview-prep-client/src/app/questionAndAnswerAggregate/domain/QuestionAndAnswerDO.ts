@@ -1,12 +1,20 @@
-import { QuestionAndAnswerDTO } from '../../questions/model/QuestionAndAnswerDTO';
+import { QuestionAndAnswerDTO } from "../model/QuestionAndAnswerDTO";
 
 export class QuestionAndAnswerDO {
-    private _questionAndAnswerValueObject: QuestionAndAnswerDTO[];
+    private _listOfQuestionAndAnswers: QuestionAndAnswerDTO[];
     private _isAddQuestionPopup: boolean;
 
-    constructor(questionAndAnswerValueObject: QuestionAndAnswerDTO[], isAddQuestionPopup: boolean) {
-        this._questionAndAnswerValueObject = questionAndAnswerValueObject
+    constructor(listOfQuestionAndAnswers: QuestionAndAnswerDTO[], isAddQuestionPopup: boolean) {
+        this._listOfQuestionAndAnswers = listOfQuestionAndAnswers
         this._isAddQuestionPopup = isAddQuestionPopup
+    }
+
+    get listOfQuestionsAndAnswers(): QuestionAndAnswerDTO[] {
+        return this._listOfQuestionAndAnswers;
+    }
+
+    get isAddQuestionPopup(): boolean {
+        return this._isAddQuestionPopup;
     }
 
     public updateIsAddQuestionPopup(isAddQuestion: boolean): QuestionAndAnswerDO {
@@ -17,7 +25,7 @@ export class QuestionAndAnswerDO {
 
     public updateListOfQuestionAndAnswers(list: QuestionAndAnswerDTO[]): QuestionAndAnswerDO {
         const response = this.clone();
-        response._questionAndAnswerValueObject = list;
+        response._listOfQuestionAndAnswers = list;
         return response;
     }
 

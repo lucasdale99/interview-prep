@@ -1,5 +1,5 @@
 import { QuestionAndAnswerContext } from "./QuestionAndAnswerContext"
-import {QuestionAndAnswerDO} from "../domain/QuestionAndAnswerDO";
+import {QuestionAndAnswerDO} from "../../questionAndAnswerAggregate/domain/QuestionAndAnswerDO";
 import { ReactNode, useState } from 'react';
 
 interface IQuestionAndAnswerContextProviderProps {
@@ -18,3 +18,4 @@ export const QuestionAndAnswerContextProvider = ({children}: IQuestionAndAnswerC
         </QuestionAndAnswerContext.Provider>
     )
 }
+

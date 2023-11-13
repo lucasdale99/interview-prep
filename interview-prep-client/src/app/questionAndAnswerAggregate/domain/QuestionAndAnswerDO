@@ -1,4 +1,4 @@
-import { QuestionAndAnswerDTO } from '../model/QuestionAndAnswerDTO';
+import { QuestionAndAnswerDTO } from '../../questions/model/QuestionAndAnswerDTO';
 
 export class QuestionAndAnswerDO {
     private _questionAndAnswerValueObject: QuestionAndAnswerDTO[];

@@ -1,4 +1,4 @@
-import {QuestionAndAnswerDO} from "../domain/QuestionAndAnswerDO";
+import {QuestionAndAnswerDO} from "../../questionAndAnswerAggregate/domain/QuestionAndAnswerDO";
 import { Dispatch, SetStateAction, createContext } from "react";
 
 interface IQuestionAndAnswerContextProps {

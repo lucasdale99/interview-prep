@@ -3,12 +3,14 @@ import { IAPIResponseHandler } from "./IAPIResponseHandler";
 
 export class APIGateway implements IAPIGateway {
     private readonly apiResponseHandler: IAPIResponseHandler;
+    //only adding this to specify my env variable
+    private readonly baseURL: string = "https://localhost:7110/api";
 
     constructor(apiResponseHandler: IAPIResponseHandler) {
         this.apiResponseHandler = apiResponseHandler;
     }
 
-    public async Get<T>(path: string): Promise<T> {
+    public async get<T>(endpoint: string): Promise<T> {
         try {
             const requestOptions = {
                 method: "GET",
@@ -17,7 +19,7 @@ export class APIGateway implements IAPIGateway {
                 }
             };
 
-            const response = await fetch(path, requestOptions);
+            const response = await fetch(`${this.baseURL}/${endpoint}`, requestOptions);
             return this.apiResponseHandler.HandleResponse(response) as T;
 
         } catch (error: unknown) {
@@ -25,7 +27,7 @@ export class APIGateway implements IAPIGateway {
         }
     }
 
-    public async Post<T>(path: string, requestBody: T): Promise<void | unknown> {
+    public async post<T>(endpoint: string, requestBody: T): Promise<void | unknown> {
         try {
 
             const requestOptions = {
@@ -36,7 +38,7 @@ export class APIGateway implements IAPIGateway {
                 body: JSON.stringify(requestBody)
             };
 
-            const response = await fetch(path, requestOptions);
+            const response = await fetch(`${this.baseURL}/${endpoint}`, requestOptions);
             return this.apiResponseHandler.HandleResponse(response);
 
         } catch (error: unknown) {
@@ -44,7 +46,7 @@ export class APIGateway implements IAPIGateway {
         }
     }
 
-    public async Put<T>(path: string, requestBody: T): Promise<void | unknown> {
+    public async put<T>(endpoint: string, requestBody: T): Promise<void | unknown> {
         try {
 
             const requestOptions = {
@@ -55,7 +57,7 @@ export class APIGateway implements IAPIGateway {
                 body: JSON.stringify(requestBody)
             };
 
-            const response = await fetch(path, requestOptions);
+            const response = await fetch(`${this.baseURL}/${endpoint}`, requestOptions);
             return this.apiResponseHandler.HandleResponse(response);
 
         } catch (error: unknown) {
@@ -63,7 +65,7 @@ export class APIGateway implements IAPIGateway {
         }
     }
 
-    public async Delete<T>(path: string): Promise<void> {
+    public async delete<T>(endpoint: string): Promise<void> {
 
         const requestOptions = {
             method: "DELETE",
@@ -72,7 +74,7 @@ export class APIGateway implements IAPIGateway {
             },
         };
 
-        const response = await fetch(path, requestOptions);
+        const response = await fetch(`${this.baseURL}/${endpoint}`, requestOptions);
         return this.apiResponseHandler.HandleResponse(response);
     }
 }

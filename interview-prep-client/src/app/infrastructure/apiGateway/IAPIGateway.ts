@@ -1,6 +1,6 @@
 export interface IAPIGateway {
-    Get: <T>(path: string) => Promise<T>;
-    Post: <T>(path: string, requestBody: T) => Promise<void | unknown>;
-    Put: <T>(path: string, requestBody: T) => Promise<void | unknown>;
-    Delete: <T>(path: string) => Promise<void>;
+    get: <T>(path: string) => Promise<T>;
+    post: <T>(path: string, requestBody: T) => Promise<void | unknown>;
+    put: <T>(path: string, requestBody: T) => Promise<void | unknown>;
+    delete: <T>(path: string) => Promise<void>;
 }

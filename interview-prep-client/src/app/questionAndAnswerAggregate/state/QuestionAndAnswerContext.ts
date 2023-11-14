@@ -7,6 +7,6 @@ interface IQuestionAndAnswerContextProps {
 }
 
 export const QuestionAndAnswerContext = createContext<IQuestionAndAnswerContextProps>({
-    questionAndAnswerDO: undefined,
+    questionAndAnswerDO: new QuestionAndAnswerDO([], false),
     setQuestionAndAnswerDO: () => {}
 });

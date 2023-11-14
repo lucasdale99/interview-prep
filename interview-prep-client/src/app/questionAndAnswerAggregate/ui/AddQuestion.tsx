@@ -7,8 +7,8 @@ export const AddQuestion = () => {
     }
 
     return (
-        <div>
-            <button onClick={addQuestion} className="px-4 py-2">Add Question</button>
+        <div className="flex justify-center my-5">
+            <button onClick={addQuestion} className="px-4 py-2 bg-gray-500 rounded-md">Add Question</button>
         </div>
     )
 }

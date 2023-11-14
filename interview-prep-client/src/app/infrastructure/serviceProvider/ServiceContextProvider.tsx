@@ -1,3 +1,4 @@
+"use client";
 import React, {ReactNode, createContext} from "react";
 import {IServiceContext} from "./IServiceContext";
 import { ServiceProvider } from "./ServiceProvider";

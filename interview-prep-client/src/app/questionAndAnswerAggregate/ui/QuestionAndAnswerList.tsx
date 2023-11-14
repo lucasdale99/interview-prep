@@ -1,14 +1,26 @@
+"use client";
+import { useContext, useEffect } from "react"
 import { QuestionAndAnswerDTO } from "../model/QuestionAndAnswerDTO"
 import { QuestionAndAnswer } from "./QuestionAndAnswer"
+import { QuestionAndAnswerContext } from "../state/QuestionAndAnswerContext"
+import { ServiceContext } from '../../infrastructure/serviceProvider/ServiceContextProvider';
 
-interface IQuestionAndAnswerListProps {
-    list: QuestionAndAnswerDTO[]
-}
+export const QuestionAndAnswerList = () => {
+    const {questionAndAnswerDO, setQuestionAndAnswerDO} = useContext(QuestionAndAnswerContext);
+    const {QuestionAndAnswerService} = useContext(ServiceContext);
 
-export const QuestionAndAnswerList = ({list}: IQuestionAndAnswerListProps) => {
+    const getListOfQuestionAndAnswers = async () => {
+        const response = await QuestionAndAnswerService.getQuestionAndAnswers();
+        setQuestionAndAnswerDO(prevState => prevState?.updateListOfQuestionAndAnswers(response));
+    }
+
+    useEffect(() => {
+        void getListOfQuestionAndAnswers();
+    }, [])
+
     return (
         <>
-            {list.map((x: QuestionAndAnswerDTO, index: number) => 
+            {questionAndAnswerDO.listOfQuestionsAndAnswers.map((x: QuestionAndAnswerDTO, index: number) => 
                 <QuestionAndAnswer key={index + 1} question={x.question} answer={x.answer} number={index + 1}/>
             )}
         </>

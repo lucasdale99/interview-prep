@@ -31,6 +31,6 @@ export class QuestionAndAnswerDO {
 
 
     private clone(): QuestionAndAnswerDO {
-        return new QuestionAndAnswerDO([], false)
+        return new QuestionAndAnswerDO(this._listOfQuestionAndAnswers, this._isAddQuestionPopup)
     }
 }

@@ -1,7 +1,7 @@
 "use client";
 import { QuestionAndAnswerList } from "./questionAndAnswerAggregate/ui/QuestionAndAnswerList";
 import { AddQuestion } from "./questionAndAnswerAggregate/ui/AddQuestion";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ServiceContext } from "./infrastructure/serviceProvider/ServiceContextProvider";
 import { QuestionAndAnswerContextProvider } from "./questionAndAnswerAggregate/state/QuestionAndAnswerContextProvider";
 
@@ -11,6 +11,10 @@ export default function Home() {
   const getListOfQuestionAndAnswers = async () => {
     await QuestionAndAnswerService.getQuestionAndAnswers();
   }
+
+  useEffect(() => {
+    void getListOfQuestionAndAnswers()
+  }, [])
 
   return (
     <main className="flex min-h-screen flex-col p-24">

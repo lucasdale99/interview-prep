@@ -1,6 +1,6 @@
-namespace QuestionAndAnswer.Models;
+namespace Question.Models;
 
-public class QuestionAndAnswerItem
+public class QuestionItem
 {
     public long Id { get; set; }
     public string? Question { get; set; }

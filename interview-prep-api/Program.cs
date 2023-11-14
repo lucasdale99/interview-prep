@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
-using QuestionAndAnswer.Models;
+using Question.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +10,7 @@ Console.WriteLine(connectionString);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<TodoContext>(options =>
 options.UseNpgsql(connectionString));
-builder.Services.AddDbContext<QuestionAndAnswerContext>(options =>
+builder.Services.AddDbContext<QuestionContext>(options =>
 options.UseNpgsql(connectionString));
 
 builder.Services.AddCors(options =>

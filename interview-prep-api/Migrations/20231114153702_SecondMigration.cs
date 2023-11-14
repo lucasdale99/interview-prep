@@ -12,7 +12,7 @@ namespace interviewprepapi.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "QuestionAndAnswerItems",
+                name: "QuestionItems",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -22,7 +22,7 @@ namespace interviewprepapi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_QuestionAndAnswerItems", x => x.Id);
+                    table.PrimaryKey("PK_QuestionItems", x => x.Id);
                 });
         }
 
@@ -30,7 +30,7 @@ namespace interviewprepapi.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "QuestionAndAnswerItems");
+                name: "QuestionItems");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace interview_prep_api.Controllers
             return await _context.QuestionItems.ToListAsync();
         }
 
-        // GET: api/Question/5
+        // GET: api/Questions/5
         [HttpGet("{id}")]
         public async Task<ActionResult<QuestionItem>> GetQuestion(long id)
         {
@@ -90,7 +90,7 @@ namespace interview_prep_api.Controllers
             return CreatedAtAction("GetQuestion", new { id = questionItem.Id }, questionItem);
         }
 
-        // DELETE: api/QuestionItems/5
+        // DELETE: api/Questions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestionItem(long id)
         {

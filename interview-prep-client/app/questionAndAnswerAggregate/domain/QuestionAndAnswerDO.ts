@@ -22,13 +22,6 @@ export class QuestionAndAnswerDO {
         return response;
     }
 
-    public addQuestion(question: QuestionAndAnswerDTO): QuestionAndAnswerDO {
-        const response = this.clone();
-        response._listOfQuestionAndAnswers.push(question);
-        return response;
-    }
-
-
     private clone(): QuestionAndAnswerDO {
         return new QuestionAndAnswerDO(this._listOfQuestionAndAnswers, this._newQuestion);
     }

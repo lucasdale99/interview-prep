@@ -38,3 +38,5 @@ interview-prep-client/next-env.d.ts
 
 # api 
 interview-prep-api/appsettings.Development.json
+
+interview-prep-api/bin

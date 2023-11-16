@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+interview-prep-client/node_modules
+interview-prep-client/.pnp
+interview-prep-client/.pnp.js
+interview-prep-client/.yarn/install-state.gz
+
+# testing
+interview-prep-client/coverage
+
+# next.js
+interview-prep-client/.next/
+interview-prep-client/out/
+
+# production
+interview-prep-client/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+interview-prep-client/.env*.local
+
+# vercel
+interview-prep-client/.vercel
+
+# typescript
+interview-prep-client/*.tsbuildinfo
+interview-prep-client/next-env.d.ts
+
+
+# api 
+interview-prep-api/appsettings.Development.json

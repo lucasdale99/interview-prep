@@ -1,9 +1,9 @@
 import 'tailwindcss/tailwind.css';
 import "../app/globals.css";
-import { QuestionAndAnswerDTO } from "../app/questionAndAnswerAggregate/model/QuestionAndAnswerDTO";
-import { QuestionAndAnswerContextProvider } from "../app/questionAndAnswerAggregate/state/QuestionAndAnswerContextProvider";
-import { AddQuestion } from "../app/questionAndAnswerAggregate/ui/AddQuestion";
-import { QuestionAndAnswerList } from "../app/questionAndAnswerAggregate/ui/QuestionAndAnswerList";
+import { QuestionDTO } from "../app/questionAggregate/model/QuestionDTO";
+import { QuestionAndAnswerContextProvider } from "../app/questionAggregate/state/QuestionAndAnswerContextProvider";
+import { AddQuestion } from "../app/questionAggregate/ui/AddQuestion";
+import { QuestionAndAnswerList } from "../app/questionAggregate/ui/QuestionAndAnswerList";
 
 export async function getServerSideProps() {
   //Need to remove this if I plan to deploy to a production server
@@ -13,7 +13,7 @@ export async function getServerSideProps() {
   const response = await fetch(`${process.env.localhost}/api/Questions`);
 
   //This would be handled in the api gateway typically. Need to find a good DDD solution for server rendered components
-  const data = await response.json() as QuestionAndAnswerDTO[];
+  const data = await response.json() as QuestionDTO[];
   
   if (!response.ok) {
     // This will activate the closest `error.js` Error Boundary
@@ -27,7 +27,7 @@ export async function getServerSideProps() {
 }
 
 interface IHomeProps {
-  questions: QuestionAndAnswerDTO[]
+  questions: QuestionDTO[]
 }
 
 export default function Home({questions}: IHomeProps) {

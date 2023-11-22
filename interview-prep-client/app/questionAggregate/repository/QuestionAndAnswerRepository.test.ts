@@ -1,17 +1,17 @@
 import { QuestionAndAnswerRepository } from "./QuestionAndAnswerRepository";
 import { IQuestionAndAnswerGateway } from '../gateway/IQuestionAndAnswerGateway';
 import { Mock, Times } from "moq.ts";
-import { QuestionAndAnswerDTO } from '../model/QuestionAndAnswerDTO';
+import { QuestionDTO } from '../model/QuestionDTO';
 
 describe("QuestionAndAnswerRepository", () => {
     let questionAndAnswerRepo: QuestionAndAnswerRepository;
     let gateway: Mock<IQuestionAndAnswerGateway>;
-    let questionAndAnswerListDTO: QuestionAndAnswerDTO[];
+    let questionAndAnswerListDTO: QuestionDTO[];
 
     beforeEach(() => {
         gateway = new Mock<IQuestionAndAnswerGateway>();
         questionAndAnswerRepo = new QuestionAndAnswerRepository(gateway.object())
-        questionAndAnswerListDTO = [new QuestionAndAnswerDTO(1, "", "", false), new QuestionAndAnswerDTO(2, "", "", false)]
+        questionAndAnswerListDTO = [new QuestionDTO(1, "", "", false), new QuestionDTO(2, "", "", false)]
     })
 
     it("gets data transfer object of questionandanswerlist and translates it to the domain object.", () => {

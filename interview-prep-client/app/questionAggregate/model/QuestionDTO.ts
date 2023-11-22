@@ -1,4 +1,4 @@
-export class QuestionAndAnswerDTO {
+export class QuestionDTO {
     private _id: number;
     private _question: string;
     private _answer: string;
@@ -27,13 +27,13 @@ export class QuestionAndAnswerDTO {
         return this._isEdit;
     }
 
-    public updateIsEditQuestion(isEdit: boolean): QuestionAndAnswerDTO {
+    public updateIsEditQuestion(isEdit: boolean): QuestionDTO {
         const response = this.clone();
         response._isEdit = isEdit;
         return response;
     }
 
-    private clone(): QuestionAndAnswerDTO {
-        return new QuestionAndAnswerDTO(this._id, this._question, this._answer, this._isEdit);
+    private clone(): QuestionDTO {
+        return new QuestionDTO(this._id, this._question, this._answer, this._isEdit);
     }
 }

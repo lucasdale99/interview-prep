@@ -1,4 +1,4 @@
-import { QuestionAndAnswerDTO } from "../model/QuestionAndAnswerDTO";
+import { QuestionDTO } from "../model/QuestionDTO";
 import { IQuestionAndAnswerRepository } from "../repository/IQuestionAndAnswerRepository";
 import { IQuestionAndAnswerService } from "./IQuestionAndAnswerService";
 
@@ -9,7 +9,7 @@ export class QuestionAndAnswerService implements IQuestionAndAnswerService {
         this._repository = repository;
     }
 
-    public async getQuestionAndAnswers(): Promise<QuestionAndAnswerDTO[]> {
+    public async getQuestionAndAnswers(): Promise<QuestionDTO[]> {
         return await this._repository.getQuestionAndAnswers();
     }
 

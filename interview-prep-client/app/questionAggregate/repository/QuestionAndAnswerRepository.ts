@@ -1,5 +1,5 @@
 import { IQuestionAndAnswerGateway } from "../gateway/IQuestionAndAnswerGateway";
-import { QuestionAndAnswerDTO } from "../model/QuestionAndAnswerDTO";
+import { QuestionDTO } from "../model/QuestionDTO";
 import { IQuestionAndAnswerRepository } from "./IQuestionAndAnswerRepository";
 
 export class QuestionAndAnswerRepository implements IQuestionAndAnswerRepository {
@@ -9,7 +9,7 @@ export class QuestionAndAnswerRepository implements IQuestionAndAnswerRepository
         this._gateway = gateway;
     }
     
-    public async getQuestionAndAnswers(): Promise<QuestionAndAnswerDTO[]> {
+    public async getQuestionAndAnswers(): Promise<QuestionDTO[]> {
         return await this._gateway.getQuestionAndAnswers();
     }
 
@@ -18,7 +18,7 @@ export class QuestionAndAnswerRepository implements IQuestionAndAnswerRepository
         const answer = formEvent.get("answer")?.toString();
         if(!question || !answer) return;
 
-        const newQuestion: QuestionAndAnswerDTO = new QuestionAndAnswerDTO(0, question, answer, false);
+        const newQuestion: QuestionDTO = new QuestionDTO(0, question, answer, false);
         await this._gateway.addQuestion(newQuestion);
     }
 }

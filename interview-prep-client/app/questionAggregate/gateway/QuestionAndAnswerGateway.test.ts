@@ -1,19 +1,19 @@
 import { IAPIGateway } from "../../infrastructure/apiGateway/IAPIGateway";
 import { It, Mock, Times } from "moq.ts";
 import { QuestionAndAnswerGateway } from "./QuestionAndAnswerGateway";
-import { QuestionAndAnswerDTO } from "../model/QuestionAndAnswerDTO";
+import { QuestionDTO } from "../model/QuestionDTO";
 
 describe("QuestionAndAnswerGateway", () => {
     let questionAndAnswerGateway: QuestionAndAnswerGateway;
     let apiGateway: Mock<IAPIGateway>;
-    let listOfQuestions: QuestionAndAnswerDTO[];
+    let listOfQuestions: QuestionDTO[];
 
     beforeEach(() => {
         apiGateway = new Mock<IAPIGateway>();
         questionAndAnswerGateway = new QuestionAndAnswerGateway(apiGateway.object());
         listOfQuestions = [
-            new QuestionAndAnswerDTO(1, "test?", "yes", false),
-            new QuestionAndAnswerDTO(2, "test2?", "no", false)
+            new QuestionDTO(1, "test?", "yes", false),
+            new QuestionDTO(2, "test2?", "no", false)
         ]
     })
 

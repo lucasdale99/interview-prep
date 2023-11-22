@@ -1,5 +1,6 @@
-import { QuestionAndAnswerDTO } from "../model/QuestionAndAnswerDTO";
+import { QuestionAndAnswerDTO } from "../questionAggregate/model/QuestionDTO";
 
+//Duplicate for demonstration purposes
 export class QuestionAndAnswerDO {
     private _listOfQuestionAndAnswers: QuestionAndAnswerDTO[];
     private _newQuestion: QuestionAndAnswerDTO;

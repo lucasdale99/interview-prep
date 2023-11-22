@@ -1,9 +1,9 @@
-import { QuestionAndAnswerGateway } from "../../questionAndAnswerAggregate/gateway/QuestionAndAnswerGateway";
+import { QuestionAndAnswerGateway } from "../../questionAggregate/gateway/QuestionAndAnswerGateway";
 import { APIGateway } from "../apiGateway/APIGateway";
 import { IServiceContext } from "./IServiceContext";
 import { APIResponseHandler } from "../apiGateway/APIResponseHandler";
-import { QuestionAndAnswerService } from "../../questionAndAnswerAggregate/service/QuestionAndAnswerService";
-import { QuestionAndAnswerRepository } from "../../questionAndAnswerAggregate/repository/QuestionAndAnswerRepository";
+import { QuestionAndAnswerService } from "../../questionAggregate/service/QuestionAndAnswerService";
+import { QuestionAndAnswerRepository } from "../../questionAggregate/repository/QuestionAndAnswerRepository";
 
 export class ServiceProvider {
     private static instance: ServiceProvider;

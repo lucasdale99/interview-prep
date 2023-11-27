@@ -1,5 +1,5 @@
-import { QuestionService } from "../../questionAggregate/service/QuestionService";
+import { IQuestionService } from "../../questionAggregate/service/IQuestionService";
 
 export interface IServiceContext {
-    QuestionService: QuestionService
+    QuestionService: IQuestionService
 }

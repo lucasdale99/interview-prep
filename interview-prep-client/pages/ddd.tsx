@@ -3,7 +3,7 @@ import "../app/globals.css";
 import { QuestionDTO } from "../app/questionAggregate/model/QuestionDTO";
 import { QuestionAndAnswerContextProvider } from "../app/questionAggregate/state/QuestionContextProvider";
 import { AddQuestion } from "../app/questionAggregate/ui/AddQuestion";
-import { QuestionAndAnswerList } from "../app/questionAggregate/ui/QuestionAndAnswerList";
+import { QuestionAndAnswerList } from "../app/questionAggregate/ui/QuestionList";
 import { Provider } from 'react-redux';
 import {store} from "../app/questionAggregateRedux/store";
 

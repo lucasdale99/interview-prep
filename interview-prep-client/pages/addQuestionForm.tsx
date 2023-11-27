@@ -1,5 +1,4 @@
 import { FormEvent } from 'react'
-import { getServerSideProps } from './ddd';
  
 export default function AddQuestionForm() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {

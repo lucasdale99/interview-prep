@@ -1,5 +1,5 @@
 import { QuestionDTO } from "../model/QuestionDTO"
-import { QuestionAndAnswer } from "./QuestionAndAnswer"
+import { Question} from "./Question"
 
 interface IQuestionAndAnswerListProps {
     questions: QuestionDTO[]
@@ -8,8 +8,8 @@ interface IQuestionAndAnswerListProps {
 export const QuestionAndAnswerList = ({questions}: IQuestionAndAnswerListProps) => {
     return (
         <>
-            {questions?.map((x: QuestionDTO, index: number) => 
-                <QuestionAndAnswer key={index + 1} question={x.question} answer={x.answer} number={index + 1} isEdit={x.isEdit}/>
+            {questions?.map((questionDTO: QuestionDTO, index: number) => 
+                <Question key={index + 1} questionDTO={questionDTO} number={index + 1}/>
             )}
         </>
     )

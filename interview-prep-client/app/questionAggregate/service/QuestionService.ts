@@ -1,3 +1,4 @@
+import { QuestionDO } from "../domain/QuestionDO";
 import { QuestionDTO } from "../model/QuestionDTO";
 import { IQuestionAndAnswerRepository } from "../repository/IQuestionRepository";
 import { IQuestionService } from "./IQuestionService";
@@ -15,5 +16,9 @@ export class QuestionService implements IQuestionService {
 
     public async addQuestion() {
         return await this._repository.addQuestion();
+    }
+
+    public async editQuestion(questionDTO: QuestionDTO) {
+        return await this._repository.editQuestion(questionDTO);
     }
 }

@@ -14,9 +14,6 @@ export class QuestionDORedux {
         return this._listOfQuestionAndAnswers;
     }
 
-
-
-
     public updateListOfQuestionAndAnswers(list: QuestionDTORedux[]): QuestionDORedux {
         const response = this.clone();
         response._listOfQuestionAndAnswers = list;

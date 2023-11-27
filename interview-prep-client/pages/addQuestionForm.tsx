@@ -34,7 +34,7 @@ export default function AddQuestionForm() {
     <form className="flex flex-col flex-grow" onSubmit={onSubmit}>
         <input className="flex flex-grow py-2 m-2 rounded-md px-2 text-black focus-visible:outline-2 outline-purple-500" name="question" placeholder="Question"/>
         <input className="py-2 mx-2 rounded-md m-2 px-2 text-black flex-grow focus-visible:outline-2 outline-purple-500" name="answer" placeholder="Answer"/>
-        <button className="px-4 py-2 rounded-md m-2 bg-gray-500 hover:bg-gray-400 ml-2" type="submit">Save</button>
+        <button className="px-4 py-2 rounded-md m-2 bg-violet-500 hover:bg-violet-400 ml-2" type="submit">Save</button>
     </form>
   )
 }

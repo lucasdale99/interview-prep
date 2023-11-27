@@ -29,8 +29,8 @@ export const QuestionAndAnswer = ({question, answer, number, isEdit}: IQuestionA
                     </div>
                 </div>
                 <div className="flex flex-grow justify-end">
-                    <button onClick={saveQuestion} className="bg-gray-500 px-4 py-2 rounded-md hover:bg-gray-400 mr-2">Save</button>
-                    <button onClick={editQuestion} className="bg-gray-500 px-4 py-2 rounded-md hover:bg-gray-400">Cancel</button>
+                    <button onClick={saveQuestion} className="bg-violet-500 hover:bg-violet-400 px-4 py-2 rounded-md mr-2">Save</button>
+                    <button onClick={editQuestion} className="bg-violet-500 hover:bg-violet-400 px-4 py-2 rounded-md">Cancel</button>
                 </div>
             </div>
         )
@@ -53,7 +53,7 @@ export const QuestionAndAnswer = ({question, answer, number, isEdit}: IQuestionA
                         </div>
                     </div>
                 </div>
-                <button onClick={editQuestion} className="bg-gray-500 px-4 py-2 rounded-md hover:bg-gray-400">Edit</button>
+                <button onClick={editQuestion} className="bg-violet-500 hover:bg-violet-400 px-4 py-2 rounded-md">Edit</button>
             </div>
         )
     }

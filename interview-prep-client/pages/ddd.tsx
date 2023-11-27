@@ -40,8 +40,8 @@ export default function Home({questions}: IHomeProps) {
         <QuestionAndAnswerContextProvider>
           <main className="flex min-h-screen flex-col p-24">
               <div className="flex m-4">
-                <a className="flex mx-2 hover:text-blue-400" href='/ddd'>DDD Implementation</a>
-                <a className="flex mx-2 hover:text-blue-400" href='/redux'>Redux Implementation</a>
+                <a className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/ddd'>DDD Implementation</a>
+                <a className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/redux'>Redux Implementation</a>
               </div>
               <div className="flex justify-center">
                 <h1 className="text-xl font-bold">Interview questions</h1>

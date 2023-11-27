@@ -48,12 +48,12 @@ export const Question = ({questionDTO, number}: IQuestionAndAnswerProps) => {
                     <div className="flex flex-col justify-center pr-5">
                             <p className="text-xl">{number}</p>
                     </div>
-                    <div className="flex flex-grow flex-col">
-                        <input className="flex py-1 m-2 p-2 rounded-md text-base text-black" value={editedQuestion} onChange={(e: ChangeEvent<HTMLInputElement>) => handleQuestionChange(e)}/>
-                        <textarea className="flex py-1 m-2 p-2 rounded-md text-base text-black" rows={6} value={editedAnswer} onChange={handleAnswerChange}></textarea>
+                    <div className="flex flex-grow flex-col pr-5">
+                        <input className="flex py-1 m-2 p-2 rounded-md text-base text-black focus-visible:outline-2 outline-purple-500" value={editedQuestion} onChange={(e: ChangeEvent<HTMLInputElement>) => handleQuestionChange(e)}/>
+                        <textarea className="flex py-1 m-2 p-2 rounded-md text-base text-black focus-visible:outline-2 outline-purple-500" rows={6} value={editedAnswer} onChange={handleAnswerChange}></textarea>
                     </div>
                 </div>
-                <div className="flex flex-grow justify-end">
+                <div className="flex justify-end">
                     <div className="flex flex-col">
                         <button onClick={saveQuestion} className="bg-violet-500 hover:bg-violet-400 px-4 py-2 rounded-md my-2">Save</button>
                         <button onClick={deleteQuestion} className="bg-red-500 hover:bg-red-400 px-4 py-2 rounded-md my-2">Delete</button>

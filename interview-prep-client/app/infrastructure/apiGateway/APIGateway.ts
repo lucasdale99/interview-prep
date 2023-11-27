@@ -12,17 +12,6 @@ export class APIGateway implements IAPIGateway {
 
     public async get<T>(endpoint: string): Promise<T> {
         try {
-            const requestOptions = {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                cache: "no-cache",
-                next: {
-                    tags: ["questions"]
-                }
-            };
-
             const response = await fetch(`${this.baseURL}/${endpoint}`,
                 {
                     method: "GET",

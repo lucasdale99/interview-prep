@@ -1,6 +1,6 @@
 import { QuestionDTO } from "../model/QuestionDTO";
 
-export interface IQuestionAndAnswerRepository {
+export interface IQuestionGateway {
     getQuestionAndAnswers(): Promise<QuestionDTO[]>;
-    addQuestion(formEvent: FormData): Promise<void>;
+    addQuestion(addQuestion: QuestionDTO): Promise<void>;
 }

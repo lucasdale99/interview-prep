@@ -1,6 +1,6 @@
 "use client";
-import { QuestionAndAnswerContext } from "./QuestionAndAnswerContext"
 import {QuestionDO} from "../domain/QuestionDO";
+import {QuestionContext} from "../state/QuestionContext"
 import { ReactNode, useState } from 'react';
 import { QuestionDTO } from "../model/QuestionDTO";
 
@@ -12,12 +12,12 @@ export const QuestionAndAnswerContextProvider = ({children}: IQuestionAndAnswerC
     const [questionDO, setQuestionDO] = useState(new QuestionDO([], new QuestionDTO(1, "", "", false)))
 
     return (
-        <QuestionAndAnswerContext.Provider value={{
+        <QuestionContext.Provider value={{
             questionDO,
             setQuestionDO
         }}>
             {children}
-        </QuestionAndAnswerContext.Provider>
+        </QuestionContext.Provider>
     )
 }
 

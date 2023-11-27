@@ -1,15 +1,15 @@
-import { QuestionAndAnswerRepository } from "./QuestionAndAnswerRepository";
-import { IQuestionAndAnswerGateway } from '../gateway/IQuestionAndAnswerGateway';
+import { QuestionAndAnswerRepository } from "./QuestionRepository";
+import { IQuestionGateway } from '../gateway/IQuestionGateway';
 import { Mock, Times } from "moq.ts";
 import { QuestionDTO } from '../model/QuestionDTO';
 
 describe("QuestionAndAnswerRepository", () => {
     let questionAndAnswerRepo: QuestionAndAnswerRepository;
-    let gateway: Mock<IQuestionAndAnswerGateway>;
+    let gateway: Mock<IQuestionGateway>;
     let questionAndAnswerListDTO: QuestionDTO[];
 
     beforeEach(() => {
-        gateway = new Mock<IQuestionAndAnswerGateway>();
+        gateway = new Mock<IQuestionGateway>();
         questionAndAnswerRepo = new QuestionAndAnswerRepository(gateway.object())
         questionAndAnswerListDTO = [new QuestionDTO(1, "", "", false), new QuestionDTO(2, "", "", false)]
     })

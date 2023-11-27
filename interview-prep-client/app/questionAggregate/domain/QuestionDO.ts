@@ -13,9 +13,19 @@ export class QuestionDO {
         return this._listOfQuestionAndAnswers;
     }
 
+    get newQuestion(): QuestionDTO {
+        return this._newQuestion;
+    }
+
     public updateListOfQuestionAndAnswers(list: QuestionDTO[]): QuestionDO {
         const response = this.clone();
         response._listOfQuestionAndAnswers = list;
+        return response;
+    }
+
+    public addQuestion(questionDTO: QuestionDTO): QuestionDO {
+        const response = this.clone();
+        response._newQuestion = questionDTO;
         return response;
     }
 

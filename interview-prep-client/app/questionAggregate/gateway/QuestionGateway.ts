@@ -1,8 +1,8 @@
-import { IQuestionAndAnswerGateway } from "./IQuestionAndAnswerGateway";
 import { IAPIGateway } from "../../infrastructure/apiGateway/IAPIGateway";
 import { QuestionDTO } from "../model/QuestionDTO";
+import { IQuestionGateway } from "./IQuestionGateway";
 
-export class QuestionAndAnswerGateway implements IQuestionAndAnswerGateway {
+export class QuestionGateway implements IQuestionGateway {
     private baseURL: string = 'Questions';
     private readonly _apiGateway: IAPIGateway;
 

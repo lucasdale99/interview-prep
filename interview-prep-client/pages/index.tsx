@@ -1,5 +1,6 @@
 import 'tailwindcss/tailwind.css';
 import "../app/globals.css";
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
                 <p>I have two implementations of a similar CRUD application to help with understanding two ways we're capable of state management. One being a DDD (Domain Driven Design) pattern and the other a Redux pattern. Please review my github and checkout the questionAggregate for the DDD pattern and questionAggregateRedux for the redux pattern.</p>
             </div>
             <div className="flex m-4">
-                <a className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/ddd'>DDD Implementation</a>
-                <a className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/redux'>Redux Implementation</a>
+                <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/ddd'>DDD Implementation</Link>
+                <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/redux'>Redux Implementation</Link>
             </div>
         </main>
     </>

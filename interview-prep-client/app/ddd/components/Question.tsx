@@ -1,6 +1,6 @@
-import { ChangeEvent, useContext, useState } from "react";
+"use client";
+import { ChangeEvent, useState } from "react";
 import { QuestionDTO } from "../model/QuestionDTO";
-import { ServiceContext } from "../../infrastructure/serviceProvider/ServiceContextProvider";
 
 interface IQuestionAndAnswerProps {
     questionDTO: QuestionDTO;
@@ -8,7 +8,6 @@ interface IQuestionAndAnswerProps {
 }
 
 export const Question = ({questionDTO, number}: IQuestionAndAnswerProps) => {
-    const {QuestionService} = useContext(ServiceContext);
     const {answer, question} = questionDTO;
     const [editedQuestion, setEditedQuestion] = useState(questionDTO.question);
     const [editedAnswer, setEditedAnswer] = useState(questionDTO.answer);
@@ -33,8 +32,6 @@ export const Question = ({questionDTO, number}: IQuestionAndAnswerProps) => {
         // Create updated DTO
         const updatedQuestionDTO = new QuestionDTO(questionDTO.id, editedQuestion, editedAnswer);
         
-        // Pass to editQuestion
-        await QuestionService.editQuestion(updatedQuestionDTO);
     };
 
     const deleteQuestion = async () => {

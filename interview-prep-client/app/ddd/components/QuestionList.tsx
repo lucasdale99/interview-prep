@@ -8,8 +8,8 @@ interface IQuestionAndAnswerListProps {
 export const QuestionAndAnswerList = ({questions}: IQuestionAndAnswerListProps) => {
     return (
         <>
-            {questions?.map((questionDTO: QuestionDTO, index: number) => 
-                <Question key={index + 1} questionDTO={questionDTO} number={index + 1}/>
+            {questions?.toReversed().map((questionDTO: QuestionDTO, index: number) => 
+                <Question key={index} questionDTO={questionDTO} number={index + 1}/>
             )}
         </>
     )

@@ -1,8 +1,8 @@
 import { Provider } from "react-redux";
-import { QuestionDTO } from "../app/ddd/model/QuestionDTO";
-import { QuestionAndAnswerList } from "../app/ddd/components/QuestionList";
+import { QuestionDTO } from "../standard/model/QuestionDTO";
+import { QuestionAndAnswerList } from "../standard/components/QuestionList";
 import { store } from "./store";
-import AddQuestionForm from "../app/ddd/components/AddQuestionForm";
+import AddQuestionForm from "../standard/components/AddQuestionForm";
 
 interface IHomeProps {
   questions: QuestionDTO[]

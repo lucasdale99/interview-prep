@@ -20,4 +20,20 @@ export class QuestionDTO {
     get answer() {
         return this._answer;
     }
+
+    public updateQuestion(question: string): QuestionDTO{
+        const response = this.clone();
+        response._question = question;
+        return response;
+    }
+
+    public updateAnswer(answer: string): QuestionDTO{
+        const response = this.clone();
+        response._answer = answer;
+        return response;
+    }
+    
+    private clone(): QuestionDTO {
+        return new QuestionDTO(this._id, this._question, this._answer);
+    }
 }

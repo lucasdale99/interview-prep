@@ -4,15 +4,15 @@ import { getQuestions } from "../../lib/getQuestions";
 import AddQuestionForm from "./components/AddQuestionForm";
 
 export default async function Home() {
-  const questionsData: Promise<QuestionDTO[]> = getQuestions();
-  const questions = await questionsData;
+  const questionsData: QuestionDTO[] = await getQuestions();
+  
   return (
-      <main className="flex min-h-screen flex-col p-24">
+      <main className="flex min-h-screen flex-col mx-24">
           <div className="flex justify-center">
             <h1 className="text-xl font-bold">Interview questions</h1>
           </div>
           <AddQuestionForm/>
-          <QuestionAndAnswerList questions={questions ?? []}/>
+          <QuestionAndAnswerList questions={questionsData ?? []}/>
       </main>
   )
 }

@@ -10,8 +10,8 @@ export const QuestionAndAnswerList = ({questions}: IQuestionAndAnswerListProps) 
 
     return (
         <>
-            {questions?.toReversed().map((questionDTO: QuestionDTO, index: number) => 
-                <Question key={questionDTO.id} questionDTO={questionDTO} number={index + 1}/>
+            {questions?.toReversed().map((questionDTO: QuestionDTO) => 
+                <Question key={questionDTO.id} questionDTO={questionDTO}/>
             )}
         </>
     )

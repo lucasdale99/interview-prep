@@ -25,3 +25,39 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+  transition: 150ms;
+}
+
+.card .front,
+.card .back {
+  backface-visibility: hidden;
+}
+
+.card.flip {
+  --rotate-y: 180deg;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+::-webkit-scrollbar {
+  border-radius: 6px;
+  width: 6px; /* width of the entire scrollbar */
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: #f1f1f1; /* color of the tracking area */
+}
+
+/* Style the scrollbar thumb (the moving part) */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #8B5CF6; /* color of the scroll thumb */
+}

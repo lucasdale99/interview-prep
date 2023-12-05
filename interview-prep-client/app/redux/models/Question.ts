@@ -1,4 +1,4 @@
-export class QuestionDTORedux {
+export class Question {
     private _id: number;
     private _question: string;
     private _answer: string;
@@ -27,13 +27,13 @@ export class QuestionDTORedux {
         return this._isEdit;
     }
 
-    public updateIsEditQuestion(isEdit: boolean): QuestionDTORedux {
+    public updateIsEditQuestion(isEdit: boolean): Question {
         const response = this.clone();
         response._isEdit = isEdit;
         return response;
     }
 
-    private clone(): QuestionDTORedux {
-        return new QuestionDTORedux(this._id, this._question, this._answer, this._isEdit);
+    private clone(): Question {
+        return new Question(this._id, this._question, this._answer, this._isEdit);
     }
 }

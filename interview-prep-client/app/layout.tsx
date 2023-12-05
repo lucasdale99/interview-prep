@@ -3,7 +3,8 @@ import "../app/globals.css";
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Link from 'next/link'
+import { Navbar } from './globalComponents/Navbar';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,13 +16,14 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={inter.className + " xs:flex xs:flex-col"}>
-        <nav className="flex md:justify-start md:mx-24 my-8 px-3">
-            <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href="/">Home</Link>
-            <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/standard'>DDD</Link>
-            <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400" href='/redux'>Redux</Link>
-        </nav>
-        {children}
+      <head>
+        <link rel="icon" href="/rocket.svg"></link>
+      </head>
+      <body className={inter.className + " min-h-screen"}>
+        <Navbar/>
+        <div className="mx-4 md:justify-start md:mx-48">
+          {children}
+        </div>
       </body>
     </html>
   )

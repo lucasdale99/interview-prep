@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using TodoApi.Models;
+using UserModels;
 using Question.Models;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +8,9 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 var myAllowedSpecificOrigin = "_myAllowedSpecificOrigin";
 Console.WriteLine(connectionString);
 builder.Services.AddControllers();
-builder.Services.AddDbContext<TodoContext>(options =>
-options.UseNpgsql(connectionString));
 builder.Services.AddDbContext<QuestionContext>(options =>
+options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<UserContext>(options => 
 options.UseNpgsql(connectionString));
 
 builder.Services.AddCors(options =>

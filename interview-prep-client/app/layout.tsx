@@ -3,8 +3,10 @@ import "../app/globals.css";
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Navbar } from './globalComponents/Navbar';
-import Link from 'next/link';
+import { Navbar } from '../components/Navbar';
+import { SessionProvider } from "next-auth/react"
+import { ReactNode } from 'react';
+import { Session } from 'next-auth';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,17 +15,24 @@ export const metadata: Metadata = {
   description: 'Creating an interview prep Next.js app',
 }
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+interface IRootLayoutProps {
+  session: Session | null | undefined,
+  children: ReactNode;
+}
+
+export default function RootLayout({session, children }: IRootLayoutProps) {
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/rocket.svg"></link>
       </head>
       <body className={inter.className + " min-h-screen"}>
-        <Navbar/>
-        <div className="mx-4 md:justify-start md:mx-48">
-          {children}
-        </div>
+        <SessionProvider session={session}>
+          <Navbar />
+          <div className="mx-4 md:justify-start md:mx-48">
+            {children}
+          </div>
+        </SessionProvider>
       </body>
     </html>
   )

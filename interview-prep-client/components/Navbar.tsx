@@ -7,12 +7,11 @@ export const Navbar = () => {
                 <section className="flex">
                     <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400 shadow-lg shadow-violet-500/50 hover:shadow-violet-400/50" href="/">Home</Link>
                     <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400 shadow-lg shadow-violet-500/50 hover:shadow-violet-400/50" href='/standard'>Standard</Link>
-                    <Link className="flex mx-2 py-2 px-4 rounded-md bg-violet-500 hover:bg-violet-400 shadow-lg shadow-violet-500/50 hover:shadow-violet-400/50" href='/redux'>Redux</Link>
                 </section>
                 <section className="flex items-center">
                     <Link className="flex items-center" href={"mailto:lucasdale99@gmail.com"}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16" height="16" className="w-10 h-10 mr-4">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" width="16" height="16" className="w-10 h-10 mr-4">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                         </svg>
                     </Link>
                     <Link target="_blank" href="https://www.linkedin.com/in/lucas-dale-187278174/" className="flex items-center">

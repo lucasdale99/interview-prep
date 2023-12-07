@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using Question.Models;
 
 namespace interview_prep_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class QuestionsController : ControllerBase
     {
         private readonly QuestionContext _context;
@@ -115,5 +117,4 @@ namespace interview_prep_api.Controllers
             return (_context.QuestionItems?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
-
 }

@@ -1,7 +1,7 @@
 "use client";
 import React, { ChangeEvent, FormEvent } from 'react'
 import { useState } from 'react';
-import AddQuestion from '../../../lib/addQuestion';
+import AddQuestion from '../../actions/addQuestion';
 
 
 export default function AddQuestionForm() {

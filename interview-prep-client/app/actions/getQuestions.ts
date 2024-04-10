@@ -11,9 +11,14 @@ export async function getQuestions() {
     }
   });
 
-  if (!response.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+  try {
+    if (!response.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data')
+    }
+    return response.json();
   }
-  return response.json();
+  catch(error){
+    console.error(error);
+  }
 }

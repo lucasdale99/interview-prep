@@ -1,6 +1,6 @@
 import { QuestionDTO } from "./model/QuestionDTO"
 import { QuestionAndAnswerList } from "./components/QuestionList"
-import { getQuestions } from "../../lib/getQuestions";
+import { getQuestions } from "../actions/getQuestions";
 import AddQuestionForm from "./components/AddQuestionForm";
 
 export default async function Home() {

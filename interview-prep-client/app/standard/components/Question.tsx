@@ -1,8 +1,8 @@
 "use client";
 import { ChangeEvent, useState, MouseEvent } from "react";
 import { QuestionDTO } from "../model/QuestionDTO";
-import DeleteQuestion from "../../../lib/deleteQuestion";
-import EditQuestion from "../../../lib/editQuestion";
+import DeleteQuestion from "../../actions/deleteQuestion";
+import EditQuestion from "../../actions/editQuestion";
 
 interface IQuestionAndAnswerProps {
     questionDTO: QuestionDTO;

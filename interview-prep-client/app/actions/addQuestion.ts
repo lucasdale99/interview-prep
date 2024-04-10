@@ -6,9 +6,9 @@ type FormData = {
   answer: string;
 }
 
-async function AddQuestion(formData: FormData) {
+async function addQuestion(formData: FormData) {
   try {
-      await fetch(`https://localhost:7110/api/Questions`, {
+      await fetch(`${process.env.API_URL}Questions`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -21,4 +21,4 @@ async function AddQuestion(formData: FormData) {
   }
 }
 
-export default AddQuestion;
+export default addQuestion;

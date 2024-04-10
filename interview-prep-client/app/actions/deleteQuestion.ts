@@ -1,9 +1,9 @@
 'use server';
 import { revalidateTag } from "next/cache";
 
-async function DeleteQuestion(id: number) {
+async function deleteQuestion(id: number) {
   try {
-      await fetch(`https://localhost:7110/api/Questions/${id}`, {
+      await fetch(`${process.env.API_URL}Questions/${id}`, {
           method: 'DELETE',
           headers: {
               'Content-Type': 'application/json',
@@ -15,4 +15,4 @@ async function DeleteQuestion(id: number) {
   }
 }
 
-export default DeleteQuestion;
+export default deleteQuestion;

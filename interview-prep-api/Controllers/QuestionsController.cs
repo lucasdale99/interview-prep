@@ -7,7 +7,6 @@ namespace interview_prep_api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class QuestionsController : ControllerBase
     {
         private readonly QuestionContext _context;

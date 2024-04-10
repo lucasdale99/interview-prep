@@ -3,7 +3,7 @@ import "../app/globals.css";
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Navbar } from '../components/Navbar';
+import { Navbar } from './components/Navbar';
 import { SessionProvider } from "next-auth/react"
 import { ReactNode } from 'react';
 import { Session } from 'next-auth';

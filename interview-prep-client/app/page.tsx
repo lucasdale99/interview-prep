@@ -1,6 +1,9 @@
-import LoginButton from "@components/LoginButton";
+import NextAuth from "next-auth";
+import LoginButton from "./components/LoginButton";
+import { auth } from "./api/auth/[...nextauth]/auth";
 
-export default function Home() {
+export default async function Home() {
+    const session = await auth();
     return (
       <>
           <main className="flex flex-col">
@@ -8,7 +11,7 @@ export default function Home() {
                   <h1 className="text-2xl">Hello!</h1>
               </div>
               <div>
-                <LoginButton/>
+                <LoginButton session={session}/>
               </div>
           </main>
       </>
